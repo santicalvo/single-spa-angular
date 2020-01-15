@@ -13,6 +13,7 @@ const defaultOpts = {
 };
 
 export default function singleSpaAngular(userOpts: SingleSpaAngularOpts): LifeCycles {
+  console.log('--------singleSpaAngular-------')
   if (typeof userOpts !== "object") {
     throw Error("single-spa-angular requires a configuration object");
   }
@@ -33,7 +34,10 @@ export default function singleSpaAngular(userOpts: SingleSpaAngularOpts): LifeCy
   if (!opts.NgZone) {
     throw Error(`single-spa-angular must be passed the NgZone opt`);
   }
+  console.log('userOpts', userOpts)
+  console.log('opts', opts)
 
+  console.log('--------singleSpaAngular-------')
   return {
     bootstrap: bootstrap.bind(null, opts),
     mount: mount.bind(null, opts),
